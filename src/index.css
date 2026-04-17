@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "DM Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-editorial: "Playfair Display", serif;
+
+  /* Foliotree semantic brand colors */
+  --color-folio-bg: #1B1E1D;
+  --color-folio-red: #DB1F17;
+  --color-folio-green-deep: #084C3E;
+  --color-folio-green-light: #90E099;
+  --color-folio-cream: #F3EFE6;
+  --color-folio-dark: #121212;
+
+  --radius-folio-xl: 1.5rem;
+  --radius-folio-2xl: 2rem;
+}
+
+@layer base {
+  body {
+    @apply bg-folio-bg font-sans antialiased text-folio-dark;
+  }
+}
+
+/* Bento Patterns - Standard TW4 Utilities */
+@utility bento-card {
+  border-radius: var(--radius-folio-xl);
+  position: relative;
+  overflow: hidden;
+  transition-property: transform, box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+@utility bento-card-green {
+  @apply bento-card bg-folio-green-deep text-folio-cream;
+}
+
+@utility bento-card-red {
+  @apply bento-card bg-folio-red text-folio-cream;
+}
+
+@utility bento-card-cream {
+  @apply bento-card bg-folio-cream text-folio-green-deep;
+}
+
+/* Typography Styles exact matching */
+@utility text-tight-display {
+  @apply font-display font-bold tracking-tighter leading-[0.85];
+}
+
+/* Interaction Elements */
+@utility btn-primary {
+  @apply px-6 py-3 bg-folio-red text-folio-cream rounded-full font-bold transition-all hover:opacity-90 active:scale-95;
+}
+
+@utility btn-secondary {
+  @apply px-6 py-3 bg-folio-green-deep text-folio-cream rounded-full font-bold transition-all hover:opacity-90 active:scale-95;
+}
