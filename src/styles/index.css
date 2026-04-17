@@ -1,0 +1,24 @@
+@import "./tokens.css";
+@import "./theme.css";
+@import "./components.css";
+@import "./utilities.css";
+
+/* Foliotree Global CSS Setup */
+@layer base {
+  :root {
+    /* Baseline for global scale (1rem = 16px) */
+    font-size: 16px;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    /* Optimize font rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+}

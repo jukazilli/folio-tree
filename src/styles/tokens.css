@@ -1,0 +1,113 @@
+/* src/styles/tokens.css */
+/* 
+  BASE TOKENS: The raw, semantic-agnostic values. 
+  Do not use these directly in UI unless absolutely necessary.
+*/
+@theme {
+  /* 1. Base Colors (Preserving FolioTree original essence) */
+  --color-folio-bg: #1B1E1D;
+  --color-folio-red: #DB1F17;
+  --color-folio-green-deep: #084C3E;
+  --color-folio-green-light: #90E099;
+  --color-folio-cream: #F3EFE6;
+  --color-folio-dark: #121212;
+
+  --color-folio-gray-50: #f9fafb;
+  --color-folio-gray-100: #f3f4f6;
+  --color-folio-gray-200: #e5e7eb;
+  --color-folio-gray-300: #d1d5db;
+  --color-folio-gray-400: #9ca3af;
+  --color-folio-gray-500: #6b7280;
+  --color-folio-gray-800: #1f2937;
+  --color-folio-gray-900: #111827;
+
+  /* 2. Spacing Base */
+  --spacing-4xs: 0.125rem; /* 2px */
+  --spacing-3xs: 0.25rem;  /* 4px */
+  --spacing-2xs: 0.375rem; /* 6px */
+  --spacing-xs: 0.5rem;    /* 8px */
+  --spacing-sm: 0.75rem;   /* 12px */
+  --spacing-md: 1rem;      /* 16px */
+  --spacing-lg: 1.5rem;    /* 24px */
+  --spacing-xl: 2rem;      /* 32px */
+  --spacing-2xl: 2.5rem;   /* 40px */
+  --spacing-3xl: 3rem;     /* 48px */
+  --spacing-4xl: 4rem;     /* 64px */
+  --spacing-5xl: 6rem;     /* 96px */
+
+  /* 3. Radius Base (Brutalist rounded) */
+  --radius-xs: 0.125rem; /* 2px */
+  --radius-sm: 0.25rem;  /* 4px */
+  --radius-md: 0.5rem;   /* 8px */
+  --radius-lg: 0.75rem;  /* 12px */
+  --radius-xl: 1.5rem;   /* 24px (Folio original) */
+  --radius-2xl: 2rem;    /* 32px (Folio original) */
+  --radius-full: 9999px;
+
+  /* 4. Borders */
+  --border-width-thin: 1px;
+  --border-width-base: 1.5px; /* Technical thickness */
+  --border-width-thick: 2px;
+  --border-width-heavy: 4px;
+
+  /* 5. Shadows Base */
+  --shadow-none: 0 0 #0000;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-base: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+
+  /* 6. Opacity */
+  --opacity-0: 0;
+  --opacity-5: 0.05;
+  --opacity-10: 0.1;
+  --opacity-20: 0.2;
+  --opacity-30: 0.3;
+  --opacity-40: 0.4;
+  --opacity-50: 0.5;
+  --opacity-60: 0.6;
+  --opacity-70: 0.7;
+  --opacity-80: 0.8;
+  --opacity-90: 0.9;
+  --opacity-100: 1;
+
+  /* 7. Motion (Speeds & Easings) */
+  --animate-duration-fast: 150ms;
+  --animate-duration-base: 200ms; /* Snappy, productive UI */
+  --animate-duration-slow: 300ms;
+  --animate-duration-epic: 500ms;
+  
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-folio-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* Bouncy Drawer interaction */
+
+  /* 8. Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  /* 9. Grid & Layout Base */
+  --layout-max-w-app: 1440px;
+  --layout-max-w-content: 800px;
+  --layout-sidebar-w: 256px;
+  --layout-header-h: 64px;
+
+  /* 11. Z-Index Base */
+  --z-hide: -1;
+  --z-base: 0;
+  --z-docked: 10;
+  --z-dropdown: 20;
+  --z-sticky: 30;
+  --z-banner: 40;
+  --z-overlay: 50;
+  --z-modal: 60;
+  --z-popover: 70;
+  --z-toast: 80;
+  --z-tooltip: 90;
+}

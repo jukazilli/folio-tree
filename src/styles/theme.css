@@ -1,0 +1,45 @@
+/* src/styles/theme.css */
+/* 
+  SEMANTIC TOKENS: Role-based tokens mapping to Base tokens.
+  Use these directly in UI components to ensure system-wide consistency
+  and compatibility with standard UI frameworks.
+*/
+@theme {
+  /* Shadcn & System Colors Setup */
+  --color-background: var(--color-folio-bg);
+  --color-foreground: var(--color-folio-cream);
+  
+  --color-card: var(--color-folio-cream);
+  --color-card-foreground: var(--color-folio-dark);
+  
+  --color-popover: var(--color-folio-cream);
+  --color-popover-foreground: var(--color-folio-dark);
+  
+  --color-primary: var(--color-folio-red);
+  --color-primary-foreground: var(--color-folio-cream);
+  
+  --color-secondary: var(--color-folio-green-deep);
+  --color-secondary-foreground: var(--color-folio-cream);
+  
+  --color-muted: var(--color-folio-dark); /* With opacity in usage */
+  --color-muted-foreground: var(--color-folio-gray-400);
+  
+  --color-accent: var(--color-folio-green-light);
+  --color-accent-foreground: var(--color-folio-green-deep);
+  
+  --color-destructive: var(--color-folio-red);
+  --color-destructive-foreground: var(--color-folio-cream);
+
+  --color-border: color-mix(in srgb, var(--color-folio-cream) 10%, transparent);
+  --color-input: color-mix(in srgb, var(--color-folio-cream) 20%, transparent);
+  --color-ring: var(--color-folio-red);
+
+  /* Radius Semantic Variables */
+  --radius: var(--radius-md); /* shadcn base */
+  --radius-card: var(--radius-xl); /* FolioTree native layout cards */
+
+  /* Semantic Elevation */
+  --shadow-elevation-base: var(--shadow-sm);
+  --shadow-elevation-card: var(--shadow-md);
+  --shadow-elevation-floating: var(--shadow-xl); /* Drawers, Modals */
+}

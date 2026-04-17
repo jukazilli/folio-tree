@@ -1,0 +1,11 @@
+/* src/styles/utilities.css */
+/* 
+  Custom generic utilities for layouts and behaviors used across the app. 
+*/
+@utility hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;    /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;        /* Chrome, Safari and Opera */
+  }
+}

@@ -115,166 +115,174 @@ function NavItem({ icon, label, active, onClick, isSub }: { icon: React.ReactNod
 // -----------------------------------------------------------------------------
 function TokensView() {
   return (
-    <div className="p-8 md:p-12 max-w-5xl mx-auto">
-      <div className="mb-12">
-         <h2 className="text-tight-display text-4xl text-folio-cream mb-4">Brand & Design Tokens</h2>
-         <p className="font-mono text-folio-cream/60 text-sm">The foundational visual rules and brand attributes of FolioTree.</p>
+    <div className="p-8 md:p-12 max-w-6xl mx-auto space-y-16 pb-24">
+      <div className="mb-12 border-b border-white/10 pb-8">
+         <h2 className="text-tight-display text-4xl text-folio-cream mb-4">Design Tokens</h2>
+         <p className="font-mono text-folio-cream/60 text-sm mb-4">The foundational visual values of FolioTree built for scale, mapping physical CSS variables to multi-context semantic themes (Auth, SaaS, Public).</p>
+         <div className="flex gap-2">
+            <span className="bg-folio-green-light/10 text-folio-green-light px-2 py-1 rounded font-mono text-[10px] uppercase border border-folio-green-light/20">src/styles/tokens.css</span>
+            <span className="bg-folio-red/10 text-folio-red px-2 py-1 rounded font-mono text-[10px] uppercase border border-folio-red/20">src/styles/theme.css</span>
+         </div>
       </div>
 
-      <section className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-         <div className="bento-card-cream p-8 flex flex-col justify-between text-folio-dark">
-            <div>
-               <h3 className="font-mono text-[10px] opacity-50 uppercase tracking-widest mb-4">Core Brand Attributes</h3>
-               <div className="text-tight-display text-3xl text-folio-green-deep mb-2">Absolute <br/>Modularity</div>
-               <p className="font-medium text-sm text-folio-green-deep/80 leading-relaxed mb-4">
-                 FolioTree interfaces are built on sharp geometries and high-contrast color massing. We abandon generic shadows and gradients in favor of structural clarity, treating user data like an API represented as physical blocks.
-               </p>
-            </div>
-            <div>
-               <h3 className="font-mono text-[10px] opacity-50 uppercase tracking-widest mb-2 mt-6">Tone & Voice</h3>
-               <div className="flex gap-2 font-bold text-xs uppercase text-folio-red">
-                  <span className="bg-folio-red/10 px-2 py-1 rounded">Sophisticated</span>
-                  <span className="bg-folio-red/10 px-2 py-1 rounded">Modular</span>
-                  <span className="bg-folio-red/10 px-2 py-1 rounded">Trustworthy</span>
-               </div>
-            </div>
+      <TokenSection title="1. Base Colors (Physical)" id="colors">
+         <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-6">
+            <ColorSwatch name="Folio BG" hex="#1B1E1D" token="--color-folio-bg" cls="bg-[#1B1E1D] border border-white/10" />
+            <ColorSwatch name="Folio Red" hex="#DB1F17" token="--color-folio-red" cls="bg-[#DB1F17]" />
+            <ColorSwatch name="Green Deep" hex="#084C3E" token="--color-folio-green-deep" cls="bg-[#084C3E]" />
+            <ColorSwatch name="Green Light" hex="#90E099" token="--color-folio-green-light" cls="bg-[#90E099]" />
+            <ColorSwatch name="Folio Cream" hex="#F3EFE6" token="--color-folio-cream" cls="bg-[#F3EFE6]" />
+            <ColorSwatch name="Folio Dark" hex="#121212" token="--color-folio-dark" cls="bg-[#121212] border border-white/10" />
          </div>
-         <div className="bento-card-green p-8 flex flex-col justify-center text-folio-cream">
-            <h3 className="font-mono text-[10px] text-folio-green-light uppercase tracking-widest mb-6">Translation to Interface</h3>
-            <ul className="space-y-4 text-sm font-medium">
-               <li className="flex gap-3">
-                  <div className="mt-1 w-1.5 h-1.5 rounded-full bg-folio-green-light shrink-0" />
-                  <span><strong className="text-white">Editorial Brutalism:</strong> High contrast between pure dark/warm graphite canvases and organic cream data blocks.</span>
-               </li>
-               <li className="flex gap-3">
-                  <div className="mt-1 w-1.5 h-1.5 rounded-full bg-folio-green-light shrink-0" />
-                  <span><strong className="text-white">Information Rhythm:</strong> Extreme tight leading on display typography contrasts with dense, padded safe-spaces inside bento cards.</span>
-               </li>
-               <li className="flex gap-3">
-                  <div className="mt-1 w-1.5 h-1.5 rounded-full bg-folio-green-light shrink-0" />
-                  <span><strong className="text-white">Technical Truth:</strong> Use of monospace fonts to elevate the feeling of system-level truth, logs, and verifiable career data.</span>
-               </li>
-            </ul>
-         </div>
-      </section>
-      
-      <section className="mb-16">
-         <h3 className="font-mono text-xs text-folio-cream/40 uppercase tracking-widest mb-6 border-b border-white/10 pb-2">Layout & Composition: The Sandwich Principle</h3>
-         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-folio-cream">
-            <div className="border border-white/10 bg-white/5 rounded-folio-xl p-8 lg:p-10 flex flex-col justify-between">
-               <div className="flex gap-4 items-center mb-6">
-                 <div className="h-12 w-3 bg-folio-bg rounded-full border border-white/10" />
-                 <div>
-                   <h4 className="font-bold font-sans text-sm tracking-tight text-white mb-1">01. The Base</h4>
-                   <p className="font-mono text-[9px] text-folio-green-light uppercase tracking-widest">Canvas Foundation</p>
-                 </div>
-               </div>
-               <p className="text-sm font-medium text-folio-cream/70 leading-relaxed">Always use <strong className="text-white">Folio BG</strong> as the infinite negative space. This separates layout blocks cleanly and provides massive eye rest without color abuse.</p>
-            </div>
-            
-            <div className="bento-card-green p-8 lg:p-10 flex flex-col justify-between custom-shadow">
-               <div className="flex gap-4 items-center mb-6">
-                 <div className="h-12 w-3 bg-folio-cream rounded-full" />
-                 <div>
-                   <h4 className="font-bold font-sans text-sm tracking-tight text-folio-cream mb-1">02. The Structure</h4>
-                   <p className="font-mono text-[9px] text-folio-green-light uppercase tracking-widest">Macro Containers</p>
-                 </div>
-               </div>
-               <p className="text-sm font-medium text-folio-cream/90 leading-relaxed">Use <strong className="text-white">Folio Cream</strong> or <strong className="text-white">Green Deep</strong> for macro-blocks. Apply excessive padding (min 32px / p-8) giving components extreme room to breathe.</p>
-            </div>
+      </TokenSection>
 
-            <div className="bento-card-cream p-8 lg:p-10 flex flex-col justify-between">
-               <div className="flex gap-4 items-center mb-6">
-                 <div className="h-12 w-3 bg-folio-red rounded-full" />
-                 <div>
-                   <h4 className="font-bold font-sans text-sm tracking-tight text-folio-dark mb-1">03. The Accents</h4>
-                   <p className="font-mono text-[9px] text-folio-red uppercase tracking-widest">Micro Elements</p>
-                 </div>
-               </div>
-               <p className="text-sm font-medium text-folio-dark/80 leading-relaxed">Never use Red or Green Light as massive backgrounds. They are the top of the sandwich: tiny actions, active text, and focal tags.</p>
-            </div>
+      <TokenSection title="1.1 Semantic Themes (Shadcn + Folio Compatible)" id="semantic-colors">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <SemanticColor usage="Background / Ambient" token="--color-background" mapsTo="folio-bg" />
+            <SemanticColor usage="Surface / Cards" token="--color-card" mapsTo="folio-cream" />
+            <SemanticColor usage="Primary Actions" token="--color-primary" mapsTo="folio-red" />
+            <SemanticColor usage="Secondary Content" token="--color-secondary" mapsTo="folio-green-deep" />
+            <SemanticColor usage="Text / Reading" token="--color-foreground" mapsTo="folio-cream" />
+            <SemanticColor usage="Card Text" token="--color-card-foreground" mapsTo="folio-dark" />
+            <SemanticColor usage="Success / Tags" token="--color-accent" mapsTo="folio-green-light" />
+            <SemanticColor usage="Borders / UI Rings" token="--color-border" mapsTo="folio-cream/10" />
          </div>
+      </TokenSection>
 
-         <h3 className="font-mono text-xs text-folio-cream/40 uppercase tracking-widest mb-6 border-b border-white/10 pb-2">Color Palette Strategy</h3>
-         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            <ColorSwatch 
-              name="Folio BG" value="#1B1E1D" varName="--color-folio-bg" 
-              desc="Warm graphite standard backdrop. Reduces eye strain without being a flat pitch black." 
-              className="bg-folio-bg border border-white/10" 
-            />
-            <ColorSwatch 
-              name="Folio Red" value="#DB1F17" varName="--color-folio-red" 
-              desc="Electric & urgent. Primary brand pop, critical structural anchors." 
-              className="bg-folio-red" 
-            />
-            <ColorSwatch 
-              name="Green Deep" value="#084C3E" varName="--color-folio-green-deep" 
-              desc="Trustworthy structure. Large containers requiring dense focus." 
-              className="bg-folio-green-deep" 
-            />
-            <ColorSwatch 
-              name="Green Light" value="#90E099" varName="--color-folio-green-light" 
-              desc="High-contrast feedback. Used for verified badges and technical mono data." 
-              className="bg-folio-green-light" 
-            />
-            <ColorSwatch 
-              name="Folio Cream" value="#F3EFE6" varName="--color-folio-cream" 
-              desc="Organic/tactile. Represents the 'documents' and safe data safe-zones." 
-              className="bg-folio-cream" 
-            />
-            <ColorSwatch 
-              name="Folio Dark" value="#121212" varName="--color-folio-dark" 
-              desc="Deep ink. Maximum contrast on cream backgrounds." 
-              className="bg-folio-dark border border-white/10 text-folio-cream" 
-            />
-         </div>
-      </section>
+      <div className="grid md:grid-cols-2 gap-12">
+         <TokenSection title="2. Spacing Base" id="spacing" compact>
+            <div className="space-y-3">
+               <SizeScale name="--spacing-2xs" size="6px" w="w-1.5" />
+               <SizeScale name="--spacing-xs" size="8px" w="w-2" />
+               <SizeScale name="--spacing-sm" size="12px" w="w-3" />
+               <SizeScale name="--spacing-md" size="16px" w="w-4" />
+               <SizeScale name="--spacing-lg" size="24px" w="w-6" />
+               <SizeScale name="--spacing-xl" size="32px" w="w-8" />
+               <SizeScale name="--spacing-2xl" size="40px" w="w-10" />
+            </div>
+         </TokenSection>
 
-      <section>
-         <h3 className="font-mono text-xs text-folio-cream/40 uppercase tracking-widest mb-6 border-b border-white/10 pb-2">Typography Application</h3>
-         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-folio-dark">
-            <div className="bento-card-green p-8 flex flex-col justify-between">
-               <div className="font-mono text-[10px] text-folio-green-light mb-8 uppercase tracking-widest">Display / Space Grotesk</div>
-               <div>
-                  <div className="text-tight-display text-5xl mb-2 text-folio-cream">Heroic</div>
-                  <div className="text-tight-display text-4xl italic mb-2 text-folio-cream/70">Statements</div>
-                  <p className="text-sm font-medium mt-4 text-folio-green-light/80">Always tight tracking (-0.05em) and squeezed leading (0.85). Used for top-level block taxonomy and dramatic impact.</p>
+         <TokenSection title="3. Radius (Corners)" id="radius" compact>
+            <div className="space-y-4">
+               <ShapeScale name="--radius-sm" desc="Technical / Forms (4px)" cls="rounded-sm" />
+               <ShapeScale name="--radius-md" desc="Standard UI (8px)" cls="rounded-md" />
+               <ShapeScale name="--radius-lg" desc="Cards / Modals (12px)" cls="rounded-lg" />
+               <ShapeScale name="--radius-card" desc="Folio Heroic (24px)" cls="rounded-[24px]" />
+               <ShapeScale name="--radius-full" desc="Pills / Avatars" cls="rounded-full" />
+            </div>
+         </TokenSection>
+
+         <TokenSection title="4. Borders" id="borders" compact>
+             <div className="space-y-4 text-sm font-mono text-folio-cream/80">
+                <div className="flex justify-between items-center border-b border-white/5 pb-2"><span className="text-folio-green-light">--border-width-thin</span><span>1px</span></div>
+                <div className="flex justify-between items-center border-b border-white/5 pb-2"><span className="text-folio-green-light">--border-width-base</span><span>1.5px</span></div>
+                <div className="flex justify-between items-center border-b border-white/5 pb-2"><span className="text-folio-green-light">--border-width-thick</span><span>2px</span></div>
+                <div className="flex justify-between items-center"><span className="text-folio-green-light">--border-width-heavy</span><span>4px</span></div>
+             </div>
+         </TokenSection>
+
+         <TokenSection title="5 & 10. Shadows & Elevation" id="shadows" compact>
+             <div className="space-y-4">
+                <ElevationScale name="--shadow-elevation-base" shadows="--shadow-sm" />
+                <ElevationScale name="--shadow-elevation-card" shadows="--shadow-md" />
+                <ElevationScale name="--shadow-elevation-floating" shadows="--shadow-xl" />
+             </div>
+         </TokenSection>
+
+         <TokenSection title="7. Motion (Timing)" id="motion" compact>
+            <div className="grid grid-cols-2 gap-4 text-xs font-mono">
+               <div className="bg-white/5 p-4 rounded-lg">
+                  <div className="text-folio-green-light mb-1">--animate-base</div>
+                  <div className="text-folio-cream/50">200ms</div>
+               </div>
+               <div className="bg-white/5 p-4 rounded-lg">
+                  <div className="text-folio-red mb-1">--ease-folio-spring</div>
+                  <div className="text-[10px] text-folio-cream/50">cubic-bezier(0.34, 1.56, 0.64, 1)</div>
                </div>
             </div>
-            <div className="bento-card-cream p-8 flex flex-col justify-between">
-               <div className="font-mono text-[10px] opacity-50 mb-8 uppercase tracking-widest text-folio-green-deep">UI & Body / Inter</div>
-               <div>
-                  <div className="font-bold text-2xl mb-2 text-folio-green-deep">Neutral Legibility</div>
-                  <div className="font-medium text-base mb-2 text-folio-green-deep">Hyper-legible interface.</div>
-                  <p className="font-normal text-sm text-folio-green-deep/70 mt-4">Used for actual user data, functional UI elements, paragraph descriptions, and reading comprehension.</p>
-               </div>
-            </div>
-            <div className="border border-white/10 bg-folio-dark rounded-folio-xl p-8 flex flex-col justify-between">
-               <div className="font-mono text-[10px] opacity-80 mb-8 text-folio-cream uppercase tracking-widest">Mono / JetBrains</div>
-               <div>
-                  <div className="font-mono font-bold text-lg mb-2 text-folio-green-light">{`{ status: "Live" }`}</div>
-                  <div className="font-mono text-[10px] mb-2 text-folio-cream">14 ACTIVE OUTPUTS</div>
-                  <p className="text-sm font-medium text-folio-cream/50 mt-4">Technical precision. Used for timestamps, active live-status badges, tags, and indicating infrastructure reliability.</p>
-               </div>
-            </div>
-         </div>
-      </section>
+         </TokenSection>
+
+         <TokenSection title="11. Z-Index Scale" id="zindex" compact>
+             <div className="space-y-3 font-mono text-xs text-folio-cream/80">
+                <div className="flex justify-between p-2 hover:bg-white/5 rounded"><span className="text-folio-green-light">--z-base</span><span>0</span></div>
+                <div className="flex justify-between p-2 hover:bg-white/5 rounded"><span className="text-folio-green-light">--z-docked</span><span>10</span></div>
+                <div className="flex justify-between p-2 hover:bg-white/5 rounded"><span className="text-folio-green-light">--z-dropdown / --z-sticky</span><span>20-30</span></div>
+                <div className="flex justify-between p-2 hover:bg-white/5 rounded"><span className="text-folio-green-light">--z-overlay / --z-modal</span><span>50-60</span></div>
+                <div className="flex justify-between p-2 hover:bg-white/5 rounded"><span className="text-folio-green-light">--z-toast / --z-tooltip</span><span>80-90</span></div>
+             </div>
+         </TokenSection>
+      </div>
+
     </div>
   )
 }
 
-function ColorSwatch({ name, value, varName, desc, className }: { name: string, value: string, varName: string, desc: string, className: string }) {
+function TokenSection({ title, id, children, compact }: { title: string, id: string, children: React.ReactNode, compact?: boolean }) {
+   return (
+      <section id={id} className={`bg-black/20 border border-white/5 p-6 md:p-8 rounded-2xl ${compact ? '' : 'mb-12'}`}>
+         <h3 className="font-mono text-xs text-folio-cream/40 uppercase tracking-widest mb-6 border-b border-white/5 pb-4">{title}</h3>
+         {children}
+      </section>
+   )
+}
+
+function ColorSwatch({ name, hex, token, cls }: { name: string, hex: string, token: string, cls: string }) {
   return (
-    <div className="flex flex-col gap-3">
-       <div className={`w-full aspect-square rounded-2xl ${className} shadow-inner`} />
+    <div className="flex flex-col gap-3 group">
+       <div className={`w-full aspect-video md:aspect-square rounded-xl ${cls} shadow-inner group-hover:scale-[1.02] transition-transform`} />
        <div>
          <div className="font-bold text-sm text-folio-cream leading-none mb-1">{name}</div>
-         <div className="font-mono text-[10px] text-folio-green-light uppercase">{value}</div>
-         <div className="text-[10px] text-folio-cream/60 mt-2 leading-tight">{desc}</div>
-         <div className="font-mono text-[8px] text-folio-cream/30 mt-2 border-t border-white/10 pt-1">{varName}</div>
+         <div className="font-mono text-[10px] text-folio-green-light uppercase">{hex}</div>
+         <div className="font-mono text-[8px] text-folio-cream/30 mt-2 border-t border-white/10 pt-1">{token}</div>
        </div>
     </div>
   )
+}
+
+function SemanticColor({ usage, token, mapsTo }: { usage: string, token: string, mapsTo: string }) {
+   return (
+      <div className="bg-white/5 p-4 rounded-xl border border-white/5 hover:border-white/10 transition-colors">
+         <div className="text-xs font-bold text-folio-cream mb-3">{usage}</div>
+         <div className="font-mono text-[10px] text-folio-green-light mb-1">{token}</div>
+         <div className="font-mono text-[9px] text-folio-cream/40 px-2 py-1 bg-black/30 rounded inline-block">maps to: {mapsTo}</div>
+      </div>
+   )
+}
+
+function SizeScale({ name, size, w }: { name: string, size: string, w: string }) {
+   return (
+      <div className="flex items-center gap-4 group">
+         <div className="w-16 shrink-0 font-mono text-[10px] text-folio-cream/50 text-right">{size}</div>
+         <div className="flex-1 bg-white/5 h-8 rounded-md flex items-center p-1">
+            <div className={`h-full bg-folio-green-deep ${w} rounded-sm transition-all group-hover:bg-folio-green-light`} />
+         </div>
+         <div className="w-24 shrink-0 font-mono text-[10px] text-folio-green-light">{name}</div>
+      </div>
+   )
+}
+
+function ShapeScale({ name, desc, cls }: { name: string, desc: string, cls: string }) {
+   return (
+      <div className="flex justify-between items-center group">
+         <div>
+            <div className="font-mono text-xs text-folio-green-light">{name}</div>
+            <div className="text-[10px] text-folio-cream/50 mt-1">{desc}</div>
+         </div>
+         <div className={`w-16 h-10 border border-white/20 bg-white/5 ${cls} group-hover:bg-folio-cream/10 transition-colors`} />
+      </div>
+   )
+}
+
+function ElevationScale({ name, shadows }: { name: string, shadows: string }) {
+   return (
+      <div className="bg-white/5 p-4 rounded-xl flex justify-between items-center">
+         <div>
+            <div className="font-mono text-xs text-folio-green-light mb-1">{name}</div>
+            <div className="font-mono text-[10px] text-folio-cream/40">var({shadows})</div>
+         </div>
+         <div className="w-10 h-10 bg-folio-cream rounded-lg shadow-xl" />
+      </div>
+   )
 }
 
 // -----------------------------------------------------------------------------

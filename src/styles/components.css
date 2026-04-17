@@ -1,0 +1,39 @@
+/* src/styles/components.css */
+/* 
+  High-level composite classes. Try to keep this lean and build primarily in React Components.
+  These are specifically for the "FolioTree Identity" patterns.
+*/
+@utility bento-card {
+  border-radius: var(--radius-card); /* References semantic radius */
+  position: relative;
+  overflow: hidden;
+  transition-property: transform, box-shadow;
+  transition-timing-function: var(--ease-in-out);
+  transition-duration: var(--animate-duration-slow);
+}
+
+@utility bento-card-green {
+  @apply bento-card bg-secondary text-secondary-foreground;
+}
+
+@utility bento-card-red {
+  @apply bento-card bg-primary text-primary-foreground;
+}
+
+@utility bento-card-cream {
+  @apply bento-card bg-card text-card-foreground;
+}
+
+/* Typography Specific Identities */
+@utility text-tight-display {
+  @apply font-display font-bold tracking-tighter leading-[0.85];
+}
+
+/* Base Interactions (Button equivalents pre-shadcn) */
+@utility btn-primary {
+  @apply px-6 py-3 bg-primary text-primary-foreground rounded-full font-bold transition-all hover:opacity-90 active:scale-95;
+}
+
+@utility btn-secondary {
+  @apply px-6 py-3 bg-secondary text-secondary-foreground rounded-full font-bold transition-all hover:opacity-90 active:scale-95;
+}
